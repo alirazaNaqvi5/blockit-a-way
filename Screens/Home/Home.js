@@ -24,7 +24,7 @@ const DismissKeyboard = ({ children }) => (
 
 
  
-export default function Home() {
+export default function Home({ navigation }) {
 //   const [email, setEmail] = useState("");
 //   const [password, setPassword] = useState("");
 
@@ -59,7 +59,17 @@ export default function Home() {
       
       <Image style={styles.image} source={require("../../assets/log2.png")} />
 
+
+
+      <TouchableOpacity style={styles.Option} onPress={()=>navigation.navigate('RegisterParcel')} >
+        <Text style={styles.text}>Register Parcel</Text>
+      </TouchableOpacity>
+
+
+
         <ModalView/>
+
+        
 
       {/* <TouchableOpacity style={styles.Option} >
         <Text style={styles.text}>Receive Parcel</Text>

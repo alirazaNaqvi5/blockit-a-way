@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { TouchableOpacity } from 'react-native';
 import Login from './Screens/Login/Login';
 import Home from './Screens/Home/Home';
+import RegisterParcel from './Screens/RegisterParcel';
 
 
 function Splash({ navigation }) {
@@ -51,6 +52,7 @@ export default function App() {
           component={Splash} />
         <Stack.Screen name="login" component={Login} />
         <Stack.Screen name="home" component={Home} />
+        <Stack.Screen name="RegisterParcel" component={RegisterParcel} />
       </Stack.Navigator>
     </NavigationContainer>
   );
