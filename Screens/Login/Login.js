@@ -11,6 +11,8 @@ import {
   TouchableWithoutFeedback,
 } from "react-native";
 
+import { AuthContext } from "../../App";
+
 
 const DismissKeyboard = ({ children }) => (
   <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
@@ -21,8 +23,11 @@ const DismissKeyboard = ({ children }) => (
 
  
 export default function Login({ navigation }) {
+  const { signIn } = React.useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  // get signin function from context
 
 
   const Login = () => {
@@ -33,6 +38,7 @@ export default function Login({ navigation }) {
     //   alert("Login Failed");
     // }
   }
+
  
   return (
   
@@ -65,7 +71,7 @@ export default function Login({ navigation }) {
         <Text style={styles.forgot_button}>Forgot Password?</Text>
       </TouchableOpacity>
  
-      <TouchableOpacity style={styles.loginBtn} onPress={Login}>
+      <TouchableOpacity style={styles.loginBtn} onPress={() => signIn({ email, password })}>
         <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity>
 
